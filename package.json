@@ -27,7 +27,6 @@
   "license": "MIT",
   "lint-staged": {
     "*.js": [
-      "npm run prettier",
       "npm run xo:fix",
       "npm run xo",
       "git add"

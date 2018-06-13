@@ -1,7 +1,11 @@
 {
   "name": "apollo-server-beta",
+  "description": "Generic project for quick creation of a GraphQL with apollo-server@beta",
   "version": "0.0.1",
   "author": "Rodrigo Oler <roodrigoprogrammer@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/rodrigooler/apollo-server-beta/issues"
+  },
   "dependencies": {
     "apollo-server": "2.0.0-beta.7",
     "graphql": "0.13.2",
@@ -12,6 +16,15 @@
     "nodemon": "1.17.5",
     "xo": "0.21.1"
   },
+  "homepage": "https://github.com/rodrigooler/apollo-server-beta#readme",
+  "keywords": [
+    "Apollo",
+    "Beta",
+    "GraphQL",
+    "Javascript",
+    "Node"
+  ],
+  "license": "MIT",
   "lint-staged": {
     "*.js": [
       "npm run prettier",
@@ -20,10 +33,15 @@
       "git add"
     ]
   },
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigooler/apollo-server-beta.git"
+  },
   "scripts": {
     "dev": "nodemon src/index",
     "start": "node src/index",
-    "xo": "node_modules/.bin/xo",
-    "xo:fix": "node_modules/.bin/xo --fix"
+    "xo": "xo",
+    "xo:fix": "xo --fix"
   }
 }

@@ -26,23 +26,9 @@ Anyone is welcome to contribute to Apollo Server, just read [CONTRIBUTING.md](./
 - 2 - `cd apollo-server-beta`
 - 3 - `npm run start or npm run dev (nodemon)`;
 
-## With docker
->In your `package.json` file add a new config property with three sub-properties using your own values, as shown below:
-```json
-  "config": {
-    "imageRepo": "[namespace]/[repository]",
-    "imageName": "custom_app_name",
-    "imagePort": "0000"
-  },
-```
->### Options
->- 1 - `install docker`
->- 3 - `docker build -t <your-username>/apollo-server-beta .`
->- 4 - `docker run -p <port-output>:3000 -d <your-username>/apollo-server-beta` or `npm run docker:run`
->
->* **Get container ID** `$ docker ps`
->* **Enter the container** `$ docker exec -it <container id> /bin/bash`
->* **Print app output** `$ docker logs <container id>` 
+>### Running with Docker
+>- 1 - Install [Docker](https://www.docker.com/get-docker)
+>- 2 - `npm run docker:run` or `sudo npm run docker:run`
 
 ## Features
 * **Cross-Platform:**.
@@ -51,8 +37,7 @@ Anyone is welcome to contribute to Apollo Server, just read [CONTRIBUTING.md](./
 ## Running
 You're done. Now run your scripts. To build and publish an image you only need to use two of the commands frequently.
 1. **`npm run docker:taillogs`:** Shows logs for webserver.
-2. **`npm run docker:debugmessage`:** Shows your webserver results.
-3. **`npm run docker:clean`:** Kills the container that is running. 
+2. **`npm run docker:clean`:** Kills the container that is running. 
 
 
 [Thanks for duluca!](https://gist.github.com/duluca/d13e501e870215586271b0f9ce1781ce/)

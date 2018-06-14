@@ -41,9 +41,9 @@
     "url": "git+https://github.com/rodrigooler/apollo-server-beta.git"
   },
   "config": {
-    "imageRepo": "<your-username>/apollo-server",
-    "imageName": "test_name",
-    "imagePort": "0000"
+    "imageRepo": "apollo-server-beta",
+    "imageName": "apollo-server-beta",
+    "imagePort": "3000"
   },
   "scripts": {
     "dev": "nodemon src/index",
@@ -51,11 +51,11 @@
     "start": "node src/index",
     "xo": "xo",
     "xo:fix": "xo --fix",
-    "docker:run": "run-s -c docker:clean docker:runHelper",
-    "docker:runHelper": "cross-conf-env docker run -e NODE_ENV=local --name $npm_package_config_imageName -d -p $npm_package_config_imagePort:3000 $npm_package_config_imageRepo",
-    "docker:clean": "cross-conf-env docker rm -f $npm_package_config_imageName",
-    "predocker:taillogs": "echo Web Server Logs:",
-    "docker:taillogs": "cross-conf-env docker logs -f $npm_package_config_imageName",
+    "docker:build": "cross-conf-env docker build -t $npm_package_config_imageName .",
+    "docker:clean": "cross-conf-env ./scripts/clean.sh",
+    "docker:run": "run-s -c docker:clean docker:build docker:runHelper",
+    "docker:runHelper": "cross-conf-env ./scripts/runHelper.sh",
+    "docker:taillogs": "cross-conf-env ./scripts/logs.sh",
     "docker:debugmessage": "echo Docker Debug Completed Successfully! Hit Ctrl+C to terminate log tailing."
   }
 }

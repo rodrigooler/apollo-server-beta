@@ -14,5 +14,4 @@ WORKDIR src
 
 CMD ["npm", "start"]
 
-# Set port and start service
 EXPOSE 3000

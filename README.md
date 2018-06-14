@@ -25,3 +25,14 @@ Anyone is welcome to contribute to Apollo Server, just read [CONTRIBUTING.md](./
 - 1 - `git clone git@github.com:rodrigooler/apollo-server-beta.git`
 - 2 - `cd apollo-server-beta`
 - 3 - `npm run start or npm run dev (nodemon)`;
+
+## With docker
+>
+>- 1 - `install docker`
+>- 2 - `docker build -t <your-username>/apollo-server-beta .`
+>- 3 - `docker run -p <port-output>:3000 -d <your-username>/apollo-server-beta`
+
+>### Options
+>* **Get container ID** `$ docker ps`
+>* **Enter the container** `$ docker exec -it <container id> /bin/bash`
+>* **Print app output** `$ docker logs <container id>` 

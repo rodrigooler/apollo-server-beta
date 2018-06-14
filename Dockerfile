@@ -1,18 +1,18 @@
 # Download base image nodejs
-FROM node:carbon
+FROM node:8-alpine
 
 # Create app directory
-WORKDIR /usr/src/app
+RUN mkdir -p src
 
-COPY package*.json ./
-COPY . .
+COPY package.json /src/package.json
 
-# Install libs with npm
-RUN npm install
+RUN cd /src; npm install
 
-# Set port and start service
-EXPOSE 3000
+COPY . /src
+
+WORKDIR src 
 
 CMD ["npm", "start"]
 
+# Set port and start service
 EXPOSE 3000
